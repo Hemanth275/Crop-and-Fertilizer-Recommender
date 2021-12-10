@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Crop Prediction</title>
+    <script>
+    function myFunction(){
+    var img=document.createElement("img");
+    var node=document.getElementById('fertilizer');
+    if(node.innerText=="You should use Urea for your crop"){
+      img.src="{{url_for('static', filename='urea-f.jpg')}}";
+    }else if(node.innerText=="You should use 14-35-14 for your crop"){
+        img.src="{{url_for('static', filename='14-35-14.jpg')}}";
+    }else if(node.innerText=="You should use DAP for your crop"){
+        img.src="{{url_for('static', filename='dap.jpg')}}";
+    }else if(node.innerText=="You should use 28-28 for your crop"){
+        img.src="{{url_for('static', filename='28-28.jpg')}}";
+    }else if(node.innerText=="You should use 17-17-17 for your crop"){
+        img.src="{{url_for('static', filename='17-17-17.jpg')}}";
+    }else if(node.innerText=="You should use 20-20 for your crop"){
+        img.src="{{url_for('static', filename='20-20-20.jpg')}}";
+    }else{
+        img.src="{{url_for('static', filename='10-26-26.jpg')}}";
+    }
+    var div = document.getElementById("image");
+    div.appendChild(img);
+  }
+    </script>
+    <style>
+    h1.text-center{
+          margin:48px;
+          text-align: center;
+
+        }
+        img{
+          width:520px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 5px;
+          width: 500px;
+        }
+        div.container{
+          text-align: center;
+        }
+    </style>
+  </head>
+  <body onload="myFunction()">
+    <h1 class="text-center" id="fertilizer"><b>You should use <i>{{ prediction }} </i>for your crop</b></h1>
+   <div class="container">
+        <div class="image" id="image">
+        </div>
+    </div>
+  </body>
+</html>
+

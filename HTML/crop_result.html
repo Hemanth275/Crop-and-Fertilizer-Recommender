@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Crop Prediction</title>
+    <script>
+    function myFunction(){
+    var img=document.createElement("img");
+    var node=document.getElementById('crop');
+    if(node.innerText=="You should grow apple in your farm"){
+      img.src="{{url_for('static', filename='apple.jfif')}}";
+    } else if(node.innerText=="You should grow banana in your farm"){
+      img.src="{{url_for('static', filename='banana.jfif')}}";
+    }else if(node.innerText=="You should grow blackgram in your farm"){
+      img.src="{{url_for('static', filename='blackgram.jpg')}}";
+    }else if(node.innerText=="You should grow chickpea in your farm"){
+      img.src="{{url_for('static', filename='Chickpea.jfif')}}";
+    }else if(node.innerText=="You should grow coconut in your farm"){
+      img.src="{{url_for('static', filename='Coconut.jfif')}}";
+    }else if(node.innerText=="You should grow coffee in your farm"){
+      img.src="{{url_for('static', filename='cofee.jfif')}}";
+    }else if(node.innerText=="You should grow cotton in your farm"){
+      img.src="{{url_for('static', filename='cotton.jfif')}}";
+    }else if(node.innerText=="You should grow grapes in your farm"){
+      img.src="{{url_for('static', filename='grapes.jfif')}}";
+    }else if(node.innerText=="You should grow jute in your farm"){
+      img.src="{{url_for('static', filename='Jute.jpg')}}";
+    }else if(node.innerText=="You should grow kidneybeans in your farm"){
+      img.src="{{url_for('static', filename='Kidneybeans.jfif')}}";
+    }else if(node.innerText=="You should grow maize in your farm"){
+      img.src="{{url_for('static', filename='maize.jpg')}}";
+    }else if(node.innerText=="You should grow mango in your farm"){
+      img.src="{{url_for('static', filename='mango.jfif')}}";
+    }else if(node.innerText=="You should grow mothbeans in your farm"){
+      img.src="{{url_for('static', filename='mothbeans.jpg')}}";
+    }else if(node.innerText=="You should grow mungbean in your farm"){
+      img.src="{{url_for('static', filename='mungbean.jpg')}}";
+    }else if(node.innerText=="You should grow muskmelon in your farm"){
+      img.src="{{url_for('static', filename='muskmelon.jpg')}}";
+    }else if(node.innerText=="You should grow orange in your farm"){
+      img.src="{{url_for('static', filename='orange.jfif')}}";
+    }else if(node.innerText=="You should grow papaya in your farm"){
+      img.src="{{url_for('static', filename='papaya.jpg')}}";
+    }else if(node.innerText=="You should grow pigeonpea in your farm"){
+      img.src="{{url_for('static', filename='pigeonpea.jpg')}}";
+    }else if(node.innerText=="You should grow pomegrante in your farm"){
+      img.src="{{url_for('static', filename='pomegranate.jpg')}}";
+    }else if(node.innerText=="You should grow rice in your farm"){
+      img.src="{{url_for('static', filename='rice.jfif')}}";
+    }else{
+      img.src="{{url_for('static', filename='watermelon.jpg')}}";
+    }
+    var div = document.getElementById("image");
+    div.appendChild(img);
+  }
+    </script>
+    <style>
+    h1.text-center{
+          margin:48px;
+          text-align: center;
+
+        }
+        img{
+          width:520px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 5px;
+          width: 500px;
+        }
+        div.container{
+          text-align: center;
+        }
+    </style>
+  </head>
+  <body onload="myFunction()">
+    <h1 class="text-center" id="crop" ><b>You should grow <i>{{ prediction }} </i>in your farm</b></h1>
+   <div class="container">
+        <div class="image" id="image">
+        </div>
+    </div>
+  </body>
+</html>

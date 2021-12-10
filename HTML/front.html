@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+        <meta charset="utf-8">
+  <style media="screen">
+
+    .title{
+      color:#054261;
+      margin:10px 10px 0px 0px;
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight:bold;
+      text-align: center;
+      text-transform:uppercase;
+    }
+
+    img{
+      width:240px;
+      height:400px;
+
+    }
+
+
+    div.crop {
+      align:center;
+      background-color:white;
+      float:left;
+      margin-left:150px;
+      padding:10px;
+      width: 500px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+    }
+
+    div.container {
+        text-align: center;
+        padding: 10px 20px;
+        font-size:24px;
+
+    }
+
+  </style>
+  </head>
+  <body>
+    <title>Crop and Fertilizer Recommendation  </title>
+    <div class="title">
+      <h1>Crop and Fertilizer Recommendation</h1>
+    </div>
+
+    <div class="crop" id="Crop">
+    <a href="{{ url_for('crop_recommend') }}">
+       <img src="{{url_for('static', filename='crop.jfif')}}" alt="Crop" style="width:100%">
+    </a>
+    <div class="container">
+      <p><b>Crop Recommendation<b></p>
+    </div>
+  </div>
+  <div class="crop" id="Fertilizer">
+    <a href="{{ url_for('fertilizer_recommendation') }}">
+        <img src="{{url_for('static', filename='fert.jpg')}}" alt="Fertilizer" style="width:100%">
+    </a>
+      <div class="container">
+        <p><b>Fertilizer Recommendation<b></p>
+      </div>
+  </div>
+
+  </body>
+</html>
